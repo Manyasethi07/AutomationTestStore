@@ -1,0 +1,6 @@
+{
+  "Name": "AutomationTestStoreReusables",
+  "ProjectType": "Library",
+  "Description": "Blank Library",
+  "MainFile": "NewActivity.xaml"
+}
