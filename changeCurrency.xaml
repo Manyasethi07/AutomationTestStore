@@ -1,4 +1,20 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="changeCurrency" sap2010:ExpressionActivityEditor.ExpressionActivityEditor="C#" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="changeCurrency" this:changeCurrency.int_reportID="0" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:ar="clr-namespace:atuipath_utilities.Report;assembly=atuipath_utilities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:sd1="clr-namespace:System.Drawing;assembly=System.Drawing.Common" xmlns:sd2="clr-namespace:System.Drawing;assembly=System.Drawing.Primitives" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_ExcelPath" Type="InArgument(x:String)" />
+    <x:Property Name="str_suiteID" Type="InArgument(x:String)" />
+    <x:Property Name="int_reportID" Type="InArgument(x:Int32)">
+      <x:Property.Attributes>
+        <RequiredArgumentAttribute />
+      </x:Property.Attributes>
+    </x:Property>
+  </x:Members>
+  <this:changeCurrency.in_ExcelPath>
+    <InArgument x:TypeArguments="x:String">
+      <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_29">@"C:\Users\Testing\Downloads\StoreData.xlsx"</CSharpValue>
+    </InArgument>
+  </this:changeCurrency.in_ExcelPath>
+  <sap2010:ExpressionActivityEditor.ExpressionActivityEditor>C#</sap2010:ExpressionActivityEditor.ExpressionActivityEditor>
+  <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
       <x:String>System.Activities</x:String>
@@ -22,6 +38,35 @@
       <x:String>UiPath.Core</x:String>
       <x:String>UiPath.Core.Activities</x:String>
       <x:String>System.Windows.Markup</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Platform.SyncObjects</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Linq.Expressions</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>UiPath.Excel</x:String>
+      <x:String>UiPath.Platform.ResourceHandling</x:String>
+      <x:String>UiPath.Excel.Activities</x:String>
+      <x:String>UiPath.Platform</x:String>
+      <x:String>System.Activities.Runtime.Collections</x:String>
+      <x:String>atuipath_utilities.Report</x:String>
+      <x:String>ReporterForUiPath.Enums</x:String>
+      <x:String>ReporterForUiPath.Activities</x:String>
+      <x:String>System.Numerics</x:String>
+      <x:String>Newtonsoft.Json.Linq</x:String>
+      <x:String>Newtonsoft.Json</x:String>
+      <x:String>System.Dynamic</x:String>
+      <x:String>System.Collections.Specialized</x:String>
+      <x:String>UiPath.Excel.Activities.Business</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -46,13 +91,310 @@
       <AssemblyReference>System.Xml.Linq</AssemblyReference>
       <AssemblyReference>UiPath.System.Activities</AssemblyReference>
       <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Reflection.MetadataLoadContext</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Private.Xml</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.CodedWorkflows</AssemblyReference>
+      <AssemblyReference>NPOI.Core</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
+      <AssemblyReference>System.Data.SqlClient</AssemblyReference>
+      <AssemblyReference>atuipath_utilities</AssemblyReference>
+      <AssemblyReference>ReporterForUiPath</AssemblyReference>
+      <AssemblyReference>ReporterForUiPath.Activities</AssemblyReference>
+      <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
+      <AssemblyReference>Newtonsoft.Json</AssemblyReference>
+      <AssemblyReference>System.Collections.Specialized</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="changeCurrency" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="changeCurrency" sap:VirtualizedContainerService.HintSize="953,4470" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" Name="changecurrency_testID" />
+      <Variable x:TypeArguments="x:String" Name="currency" />
+      <Variable x:TypeArguments="sd:DataTable" Name="df" />
+    </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
+    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="524,4447" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+      <TryCatch.Try>
+        <Sequence DisplayName="Try" sap:VirtualizedContainerService.HintSize="522,3423" sap2010:WorkflowViewState.IdRef="Sequence_9">
+          <Sequence.Variables>
+            <Variable x:TypeArguments="sd:DataTable" Name="df" />
+          </Sequence.Variables>
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ar:startTest sap:VirtualizedContainerService.HintSize="488,283" sap2010:WorkflowViewState.IdRef="startTest_1" str_in_testName="Change currency test starts here">
+            <ar:startTest.int_in_ReportId>
+              <InArgument x:TypeArguments="x:Int32">
+                <CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_22">int_reportID</CSharpValue>
+              </InArgument>
+            </ar:startTest.int_in_ReportId>
+            <ar:startTest.str_in_SuiteId>
+              <InArgument x:TypeArguments="x:String">
+                <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_23">str_suiteID</CSharpValue>
+              </InArgument>
+            </ar:startTest.str_in_SuiteId>
+            <ar:startTest.str_out_TestId>
+              <OutArgument x:TypeArguments="x:String">
+                <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_5">changecurrency_testID</CSharpReference>
+              </OutArgument>
+            </ar:startTest.str_out_TestId>
+          </ar:startTest>
+          <ui:ReadRange Range="{x:Null}" AddHeaders="True" DisplayName="Read Range Workbook" sap:VirtualizedContainerService.HintSize="488,231" sap2010:WorkflowViewState.IdRef="ReadRange_4" SheetName="Sheet1">
+            <ui:ReadRange.DataTable>
+              <OutArgument x:TypeArguments="sd:DataTable">
+                <CSharpReference x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpReference`1_7">df</CSharpReference>
+              </OutArgument>
+            </ui:ReadRange.DataTable>
+            <ui:ReadRange.WorkbookPath>
+              <InArgument x:TypeArguments="x:String">
+                <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_28">in_ExcelPath</CSharpValue>
+              </InArgument>
+            </ui:ReadRange.WorkbookPath>
+          </ui:ReadRange>
+          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="488,179" sap2010:WorkflowViewState.IdRef="LogMessage_12" Level="Info">
+            <ui:LogMessage.Message>
+              <InArgument x:TypeArguments="x:Object">
+                <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_24">"Excel file reading"</CSharpValue>
+              </InArgument>
+            </ui:LogMessage.Message>
+          </ui:LogMessage>
+          <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="488,153" sap2010:WorkflowViewState.IdRef="MultipleAssign_2">
+            <ui:MultipleAssign.AssignOperations>
+              <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
+                <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_2">
+                  <ui:AssignOperation.To>
+                    <OutArgument x:TypeArguments="x:String">
+                      <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_4">currency</CSharpReference>
+                    </OutArgument>
+                  </ui:AssignOperation.To>
+                  <ui:AssignOperation.Value>
+                    <InArgument x:TypeArguments="x:String">
+                      <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_11">df.Rows[0]["Currency"].ToString()</CSharpValue>
+                    </InArgument>
+                  </ui:AssignOperation.Value>
+                </ui:AssignOperation>
+              </scg:List>
+            </ui:MultipleAssign.AssignOperations>
+          </ui:MultipleAssign>
+          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="488,179" sap2010:WorkflowViewState.IdRef="LogMessage_13" Level="Info">
+            <ui:LogMessage.Message>
+              <InArgument x:TypeArguments="x:Object">
+                <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_25">"Values assigned in excel"</CSharpValue>
+              </InArgument>
+            </ui:LogMessage.Message>
+          </ui:LogMessage>
+          <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Chrome A place to practice your automation sk" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="488,2334" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" ScopeGuid="c2ee40c9-8ea3-4838-b8bf-2318f8a9fa26" Version="V2">
+            <uix:NApplicationCard.Body>
+              <ActivityAction x:TypeArguments="x:Object">
+                <ActivityAction.Argument>
+                  <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+                </ActivityAction.Argument>
+                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="486,2136" sap2010:WorkflowViewState.IdRef="Sequence_16">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <uix:NHover DisplayName="Hover '$ US Dollar'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="452,250" HoverTime="2" sap2010:WorkflowViewState.IdRef="NHover_2" InteractionMode="SameAsCard" ScopeIdentifier="c2ee40c9-8ea3-4838-b8bf-2318f8a9fa26" Version="V5">
+                    <uix:NHover.Target>
+                      <uix:TargetAnchorable BrowserURL="automationteststore.com" ContentHash="BDIaJOjh6EOGCujRU-Jzkw" DesignTimeRectangle="39, 240, 134, 39" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl class='dropdown-toggle' tag='A' /&gt;" Guid="1525c6d7-1f89-4040-94c2-d88d15ba2e73" InformativeScreenshot="f00992c7d715a57363d2c57e938de745.jpg" Reference="0Vj4FmF_80KXTqPnaayxMA/0IUl2uj5HkmzBy9KD6-9Wg" ScopeSelectorArgument="&lt;html app='chrome.exe' title='A place to practice your automation skills!' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
+                    </uix:NHover.Target>
+                  </uix:NHover>
+                  <Switch x:TypeArguments="x:String" DisplayName="Switch" sap:VirtualizedContainerService.HintSize="452,1822" sap2010:WorkflowViewState.IdRef="Switch`1_2">
+                    <Switch.Default>
+                      <Sequence DisplayName="Default" sap:VirtualizedContainerService.HintSize="450,234" sap2010:WorkflowViewState.IdRef="Sequence_15">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="416,170" sap2010:WorkflowViewState.IdRef="LogMessage_9" Level="Info">
+                          <ui:LogMessage.Message>
+                            <InArgument x:TypeArguments="x:Object">
+                              <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_16">"Invalid currency"</CSharpValue>
+                            </InArgument>
+                          </ui:LogMessage.Message>
+                        </ui:LogMessage>
+                      </Sequence>
+                    </Switch.Default>
+                    <Switch.Expression>
+                      <InArgument x:TypeArguments="x:String">
+                        <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_12">currency</CSharpValue>
+                      </InArgument>
+                    </Switch.Expression>
+                    <Sequence x:Key="EURO" DisplayName="Body" sap:VirtualizedContainerService.HintSize="450,432" sap2010:WorkflowViewState.IdRef="Sequence_12">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'chrome.exe A place to p…'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,198" sap2010:WorkflowViewState.IdRef="NClick_7" InteractionMode="SameAsCard" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="c2ee40c9-8ea3-4838-b8bf-2318f8a9fa26" Version="V5">
+                        <uix:NClick.Target>
+                          <uix:TargetAnchorable BrowserURL="automationteststore.com" ContentHash="78xdE2jusUW-Uz2338y5KQ" DesignTimeRectangle="49, 283, 222, 37" ElementVisibilityArgument="Interactive" Guid="d568ff32-5aaa-48a8-8845-133147f09f0e" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAN4AAAAlCAYAAAAtMldtAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAHYSURBVHhe7dkxS/NQFIfxfv8PoKCIigp2ceji3kEKrgVBcSh+gLq1W+RfOHBz2ntN4aSnw/ODwEs4N1n6vDeJkw7AyU38CQDjIzwgAeEBCQgPSEB4QALCAxIQHpCA8IAEhAckIDwgAeEBCQgPSEB4QALCAxIQHpAgPLz1+re7vXvqLi5vdsfz9KXbbLZ+bG+uPK6u77vV6me3TuuXyw+/fHdO63Udm/PXad1/Pn/rzdm1gFMIDU8/ZovG6N+LxXtvTvQjf3ic9ma9Y8Pzc3Z+NnvdO+dD01oF6K8BjCEsvCEhlYbM14KSIeH5OdF/DrVd0M8CYwkJT/Fop/OPea1HvYzwbE7xHdK6DhApJDw5drdoveNZrK0QDgXl5/yjpt3Tz5U0WwsTiBISXmvHq/3Ix9jx/L11lO93hIdzERKeDAmpNGT+2PDKuUMfenjUxLkIC0+0W5Q7TMuQ8KS2A5UfSWrBaK1//OXjCs5BaHj2yFmGonOfX9+9ORkanmLwO5c9Mtp9auHZXBmazfrAtLb1aAxECg1P/PtWbXdpfVzR4eP175BlILXwxNb6nZg/oCNTeHgA/kd4QALCAxIQHpCA8IAEhAckIDwgAeEBCQgPSEB4QALCAxL8ASuMGJ3CLwDyAAAAAElFTkSuQmCC" InformativeScreenshot="41aa56879d995cff26dcb2fb0a5094eb.jpg" Reference="0Vj4FmF_80KXTqPnaayxMA/Lkj-xN3ijkqCPBcc8UJZsA" ScopeSelectorArgument="&lt;html app='chrome.exe' title='A place to practice your automation skills!' /&gt;" SearchSteps="Image" TargetType="ImageBased" Version="V6" WaitForReadyArgument="Interactive" />
+                        </uix:NClick.Target>
+                      </uix:NClick>
+                      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="416,170" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Info">
+                        <ui:LogMessage.Message>
+                          <InArgument x:TypeArguments="x:Object">
+                            <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_13">"Euro country's currency selected"</CSharpValue>
+                          </InArgument>
+                        </ui:LogMessage.Message>
+                      </ui:LogMessage>
+                    </Sequence>
+                    <Sequence x:Key="POUND STERLING" DisplayName="Body" sap:VirtualizedContainerService.HintSize="450,432" sap2010:WorkflowViewState.IdRef="Sequence_13">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'chrome.exe A place to p…(3)'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,198" sap2010:WorkflowViewState.IdRef="NClick_8" InteractionMode="DebuggerApi" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="c2ee40c9-8ea3-4838-b8bf-2318f8a9fa26" Version="V5">
+                        <uix:NClick.Target>
+                          <uix:TargetAnchorable BrowserURL="automationteststore.com/index.php" ContentHash="FeJGBOXfU0685AxsjjPzyw" DesignTimeRectangle="46, 265, 226, 30" ElementVisibilityArgument="Interactive" Guid="1af21efe-2973-4eda-9ab6-a59570e0b20b" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAOIAAAAeCAYAAAAxQMK1AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAM7SURBVHhe7ZhBaxRBEIXz/3+AQkQ0qGAO8bAX7zmEgBAQAhFvwR+Q3OJt5EUeqbyt6undtUmD74OGTE93dU9XfbO7Obr58XMxxrwsRxbRmJfHIhozARbRmAmwiMZMgEU0ZgIsojETYBGNmQCLaMwEWERjJsAiGjMBFtGYCRgm4sPD7+Xz6Zfl1eu3j+3d+0/L3d29DnsE/bjPsbFdX988G6tx0Tabr+kYnQvQx71wHBr+Xhune8v2l4H9xTlxvdvbX8vxm5OtuPHZWuvHPZyfX2zdQ0N8rEMwPntmgjjxPq41BmDe9AxwrXtADFMzTEQUUBREkxtBQj98PN1KNIuUiea1iofrKPquImaFko3TeLq/DD0H9mUvpmqdql/BM+ha7I/r7SMizkjnZCJmz8Zx2d7MX4aImCWoRSUiQPJQCCxGFYbEgm8VbiYY5ukbPxu3Fk+pzqHqr9ap+pVKRF1vHxFxjRjx/LO41VngbJHj7J4ZJOKaNEqPiLiHJGdjQEx0q3ArwbBOLL5qnNLaO+e1ij5SrVP1KyNFRFzMiy8sjctcmd0ZIiISEn8ftJIOqmKOiW+9bUGM0SrcSjAWFQupGqe07gHGjedRja1isV9/d6HFM6lERH8ct6+IIL6woojV3k0fQ0QEu3wVyYpVi3a0iLyXia/jIq17Cn9TqkCkilX1KxBGzy9b6xAR4wtrTcQsr2vP8L8yVMSzs02Z7EiUqGL0V1PCN/7V1ffmONKzd4Xx9GtctU7Vr+gnIsXXdQ4REWA+/0lFEUHrq2mU1mwzTEQkpPfQe4q5Kl6CIojFUhVFLLKswFkw2E+PiFFspXVP9wuqdap+RYUBmKOfRIeKCHCNZ4v/NW49r0VsM0TE+BUsFsHl5bdUth4RAeNWRRELAGvqf0JZDBS0KnAW75qI3I/2E87Toq8+3at1qn4lEwagL57FvxCRZ6mSZ7ng/nWseWKIiEiGJgdJqJLfKyKISWXTIiH6QtBCaBV4LKhsTTQVvYLPz6aFSqr9VOvr82fCxPlcly8abcxPj4iAcXS/WfxsvnliiIjGmN2wiMZMgEU0ZgIsojETYBGNmQCLaMwEWERjJsAiGjMBfwD12oBfALHhHQAAAABJRU5ErkJggg==" InformativeScreenshot="0444be76e986473606ade32297890997.jpg" Reference="0Vj4FmF_80KXTqPnaayxMA/H0MiKe2lmUGdiEy-cnQY8A" ScopeSelectorArgument="&lt;html app='chrome.exe' title='A place to practice your automation skills!' /&gt;" SearchSteps="Image" TargetType="ImageBased" Version="V6" WaitForReadyArgument="Interactive" />
+                        </uix:NClick.Target>
+                      </uix:NClick>
+                      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="416,170" sap2010:WorkflowViewState.IdRef="LogMessage_7" Level="Info">
+                        <ui:LogMessage.Message>
+                          <InArgument x:TypeArguments="x:Object">
+                            <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_14">"Pound sterling currency selected"</CSharpValue>
+                          </InArgument>
+                        </ui:LogMessage.Message>
+                      </ui:LogMessage>
+                    </Sequence>
+                    <Sequence x:Key="US DOLLAR" DisplayName="Body" sap:VirtualizedContainerService.HintSize="450,432" sap2010:WorkflowViewState.IdRef="Sequence_14">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'chrome.exe A place to p…(4)'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,198" sap2010:WorkflowViewState.IdRef="NClick_9" InteractionMode="DebuggerApi" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="c2ee40c9-8ea3-4838-b8bf-2318f8a9fa26" Version="V5">
+                        <uix:NClick.Target>
+                          <uix:TargetAnchorable BrowserURL="automationteststore.com/index.php" ContentHash="ORCk79uEfUqTDmHl-aS6AQ" DesignTimeRectangle="47, 296, 218, 35" ElementVisibilityArgument="Interactive" Guid="00baf45e-8fb2-4e44-8073-7b942c1a1a02" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAANoAAAAjCAYAAADygBQKAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAK2SURBVHhe7ZjBahVBEEXz/x+goIiKCmbjIqCCyyz8goDr4AfEXdxNuE+ulEVXjYGZZh45B5q8V11d/Xq4t7szFwsA7M5FDgDA9mA0gAlgNIAJYDSACWA0gAlgNIAJYDSACWA0gAlgNIAJ7Gq06+vvy83NjxwGeHLsYrS7u1/L6zcflmfPX52aPis2QvF37y+X29ufuetk1I+Xn5b7+9+n7/qr766rdnX1NQ/7yyjfbbQBjPJzfeeMxotuPRHXGT2b0e9wi88DzofNjWaTySQ+0bJhcn4lzDjO4lPMOFbVrkyhuV68fPtP3LFsLH2PZqhqmm49EY1Xnlpck6jmcDz/Rjg+mxtNApN4JLj/uTp2woxGU78En/OquKgEKxSzgUYmjkjYFndXU3TriaieN6O8UXRzxN8N58PmRvOJ5pNsJJZIJ8woQtd9zG7eCTbO25lVxM2jqym69Zi1ubs5MNp5srnRhMTg/ynWRNEJM+/2ytH1zrX1eTTOdIKNfWvijb+xqym69Zi8rnhiimoOxx+z2cAx2MVoRoKqXiqYTphZkJFo5iqnEmzum2k0j4/X1Dy/c/KLkO45wrHZ3WgS0eh6ZDphdkYzGu+raqYzxdr1LaL4VlfHuEHkZvON5lDf2gkOx2WK0TrxjURl4pWqMt3ohMh9o9rxFOlqiC1fhuRrYox7fdUcyulOXjgumxtN4vDOa6NVJjHqzwLS+PgK3idXFmm+dkUqwebaMZbrZ3FXNU1ntO70jadqNYfHd88SjsnmRhPxfzO1yggRiSqOGV2TLMCY14lulF/VrvKz8UY5bj69td7cpzk/f/lWPgvX1XyV0US1IcCx2cVoxicawFNnV6MBwB8wGsAEMBrABDAawAQwGsAEMBrABDAawAQwGsAEMBrABDAawAQwGsAEMBrABDAawAQeAEclf05QV/W0AAAAAElFTkSuQmCC" InformativeScreenshot="ad3e30ba26a7caab45e8d8d2cc815b2d.jpg" Reference="0Vj4FmF_80KXTqPnaayxMA/4H702KSaTk-DBh1GnnSoEg" ScopeSelectorArgument="&lt;html app='chrome.exe' title='A place to practice your automation skills!' /&gt;" SearchSteps="Image" TargetType="ImageBased" Version="V6" WaitForReadyArgument="Interactive" />
+                        </uix:NClick.Target>
+                      </uix:NClick>
+                      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="416,170" sap2010:WorkflowViewState.IdRef="LogMessage_8" Level="Info">
+                        <ui:LogMessage.Message>
+                          <InArgument x:TypeArguments="x:Object">
+                            <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_15">"US Dollar currency selected"</CSharpValue>
+                          </InArgument>
+                        </ui:LogMessage.Message>
+                      </ui:LogMessage>
+                    </Sequence>
+                  </Switch>
+                </Sequence>
+              </ActivityAction>
+            </uix:NApplicationCard.Body>
+            <uix:NApplicationCard.CloseMode>
+              <InArgument x:TypeArguments="uix:NAppCloseMode">
+                <CSharpValue x:TypeArguments="uix:NAppCloseMode" sap2010:WorkflowViewState.IdRef="CSharpValue`1_17">UiPath.UIAutomationNext.Enums.NAppCloseMode.Never</CSharpValue>
+              </InArgument>
+            </uix:NApplicationCard.CloseMode>
+            <uix:NApplicationCard.OCREngine>
+              <ActivityFunc x:TypeArguments="sd1:Image, scg:IEnumerable(scg:KeyValuePair(sd2:Rectangle, x:String))">
+                <ActivityFunc.Argument>
+                  <DelegateInArgument x:TypeArguments="sd1:Image" Name="Image" />
+                </ActivityFunc.Argument>
+              </ActivityFunc>
+            </uix:NApplicationCard.OCREngine>
+            <uix:NApplicationCard.TargetApp>
+              <uix:TargetApp Area="-8, -8, 1616, 868" BrowserType="Chrome" ContentHash="lFnimpmn-kaf5Ul-1bA9Ig" IconBase64="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" InformativeScreenshot="8af0931568e5b2be4c2cc9d444b58164.jpg" Reference="0Vj4FmF_80KXTqPnaayxMA/ANqpZ_vOv02A61ZQhljD6w" Selector="&lt;html app='chrome.exe' title='A place to practice your automation skills!' /&gt;" Url="https://automationteststore.com/" Version="V2">
+                <uix:TargetApp.Arguments>
+                  <InArgument x:TypeArguments="x:String" />
+                </uix:TargetApp.Arguments>
+                <uix:TargetApp.WorkingDirectory>
+                  <InArgument x:TypeArguments="x:String" />
+                </uix:TargetApp.WorkingDirectory>
+              </uix:TargetApp>
+            </uix:NApplicationCard.TargetApp>
+          </uix:NApplicationCard>
+        </Sequence>
+      </TryCatch.Try>
+      <TryCatch.Catches>
+        <Catch x:TypeArguments="s:Exception" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+          <ActivityAction x:TypeArguments="s:Exception">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+            </ActivityAction.Argument>
+            <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="522,621" sap2010:WorkflowViewState.IdRef="Sequence_10">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ar:exceptionStep sap:VirtualizedContainerService.HintSize="488,387" sap2010:WorkflowViewState.IdRef="exceptionStep_1" str_in_actualStep="Currency not selected" str_in_expectedStep="Currency not selected" str_in_stepDescription="Currency not selected" str_in_stepName="Currency not selected">
+                <ar:exceptionStep.str_in_reportId>
+                  <InArgument x:TypeArguments="x:Int32">
+                    <CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_18">int_reportID</CSharpValue>
+                  </InArgument>
+                </ar:exceptionStep.str_in_reportId>
+                <ar:exceptionStep.str_in_testId>
+                  <InArgument x:TypeArguments="x:String">
+                    <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_19">changecurrency_testID</CSharpValue>
+                  </InArgument>
+                </ar:exceptionStep.str_in_testId>
+              </ar:exceptionStep>
+              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="488,170" sap2010:WorkflowViewState.IdRef="LogMessage_10" Level="Info">
+                <ui:LogMessage.Message>
+                  <InArgument x:TypeArguments="x:Object">
+                    <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_20">"Currency not selected"</CSharpValue>
+                  </InArgument>
+                </ui:LogMessage.Message>
+              </ui:LogMessage>
+            </Sequence>
+          </ActivityAction>
+        </Catch>
+      </TryCatch.Catches>
+      <TryCatch.Finally>
+        <Sequence DisplayName="Finally" sap:VirtualizedContainerService.HintSize="522,234" sap2010:WorkflowViewState.IdRef="Sequence_11">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="488,170" sap2010:WorkflowViewState.IdRef="LogMessage_11" Level="Info">
+            <ui:LogMessage.Message>
+              <InArgument x:TypeArguments="x:Object">
+                <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_21">"Change currency terminated here"</CSharpValue>
+              </InArgument>
+            </ui:LogMessage.Message>
+          </ui:LogMessage>
+        </Sequence>
+      </TryCatch.Finally>
+    </TryCatch>
   </Sequence>
 </Activity>
