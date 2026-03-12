@@ -1,0 +1,141 @@
+{
+  "DisplayName": "payment",
+  "Tooltip": null,
+  "HelpLink": null,
+  "Color": null,
+  "OriginalIconFileName": null,
+  "Arguments": [
+    {
+      "Name": "str_SuiteID",
+      "DisplayName": "str_SuiteID",
+      "Category": null,
+      "Tooltip": null,
+      "Placeholder": null,
+      "Widget": null,
+      "IsRequired": false,
+      "IsPrincipal": true,
+      "ArgumentType": 0,
+      "DataSourceItems": null
+    },
+    {
+      "Name": "int_ReportID",
+      "DisplayName": "int_ReportID",
+      "Category": null,
+      "Tooltip": null,
+      "Placeholder": "0",
+      "Widget": null,
+      "IsRequired": true,
+      "IsPrincipal": true,
+      "ArgumentType": 0,
+      "DataSourceItems": null
+    },
+    {
+      "Name": "CHECKOUT",
+      "DisplayName": "CHECKOUT",
+      "Category": null,
+      "Tooltip": null,
+      "Placeholder": "Checkout",
+      "Widget": null,
+      "IsRequired": false,
+      "IsPrincipal": true,
+      "ArgumentType": 0,
+      "DataSourceItems": null
+    },
+    {
+      "Name": "Checkout_1",
+      "DisplayName": "Checkout_1",
+      "Category": null,
+      "Tooltip": null,
+      "Placeholder": "Checkout",
+      "Widget": null,
+      "IsRequired": false,
+      "IsPrincipal": true,
+      "ArgumentType": 0,
+      "DataSourceItems": null
+    },
+    {
+      "Name": "check1",
+      "DisplayName": "check1",
+      "Category": null,
+      "Tooltip": null,
+      "Placeholder": "Checkout",
+      "Widget": null,
+      "IsRequired": false,
+      "IsPrincipal": true,
+      "ArgumentType": 0,
+      "DataSourceItems": null
+    },
+    {
+      "Name": "confirm",
+      "DisplayName": "confirm",
+      "Category": null,
+      "Tooltip": null,
+      "Placeholder": " Checkout Confirmation",
+      "Widget": null,
+      "IsRequired": false,
+      "IsPrincipal": true,
+      "ArgumentType": 0,
+      "DataSourceItems": null
+    },
+    {
+      "Name": "editpay",
+      "DisplayName": "editpay",
+      "Category": null,
+      "Tooltip": null,
+      "Placeholder": null,
+      "Widget": null,
+      "IsRequired": false,
+      "IsPrincipal": true,
+      "ArgumentType": 0,
+      "DataSourceItems": null
+    },
+    {
+      "Name": "payment_comment",
+      "DisplayName": "payment_comment",
+      "Category": null,
+      "Tooltip": null,
+      "Placeholder": "payment_comment",
+      "Widget": null,
+      "IsRequired": false,
+      "IsPrincipal": true,
+      "ArgumentType": 0,
+      "DataSourceItems": null
+    },
+    {
+      "Name": "payment_agree",
+      "DisplayName": "payment_agree",
+      "Category": null,
+      "Tooltip": null,
+      "Placeholder": "payment_agree",
+      "Widget": null,
+      "IsRequired": false,
+      "IsPrincipal": true,
+      "ArgumentType": 0,
+      "DataSourceItems": null
+    },
+    {
+      "Name": "Continue",
+      "DisplayName": "Continue",
+      "Category": null,
+      "Tooltip": null,
+      "Placeholder": "Continue",
+      "Widget": null,
+      "IsRequired": false,
+      "IsPrincipal": true,
+      "ArgumentType": 0,
+      "DataSourceItems": null
+    },
+    {
+      "Name": "Confirmorder",
+      "DisplayName": "Confirmorder",
+      "Category": null,
+      "Tooltip": null,
+      "Placeholder": "Confirm Order",
+      "Widget": null,
+      "IsRequired": false,
+      "IsPrincipal": true,
+      "ArgumentType": 0,
+      "DataSourceItems": null
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+﻿{
+  "Name": "Seaweed Conditioner",
+  "Type": "Element",
+  "TaxonomyType": "Label",
+  "Id": "hehVqqxxC062tA9z3cPugg",
+  "Reference": "OASqst7EiUS_KcdET6qofA/hehVqqxxC062tA9z3cPugg",
+  "ParentRef": "OASqst7EiUS_KcdET6qofA/mGNS4PGd4kG3Ks_3aQCKrQ",
+  "Created": "2026-03-11T11:53:19.9497848Z",
+  "Updated": "2026-03-11T11:53:19.9497848Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=26.1.0.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=25.12.1.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}
